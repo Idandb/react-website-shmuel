@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Assistant } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/navbar'
+import ContactFooter from '@/components/contact-footer'
 
 const assistant = Assistant({
   variable: '--font-assistant',
@@ -49,7 +51,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl" className={`bg-background ${assistant.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <Navbar />
+        {children}
+        <ContactFooter />
+      </body>
     </html>
   )
 }
