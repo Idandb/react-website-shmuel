@@ -29,12 +29,10 @@ export default function Navbar() {
         scrolled ? 'navbar-scrolled' : ''
       }`}
     >
-      {/* RTL layout: Logo (right) → Nav (center) → Call button (left) */}
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        {/* Logo — far right in RTL */}
         <a href="#" className="flex items-center gap-2 shrink-0 order-first">
           <Image
-            src="/logo.png"
+            src="/logo.jpg"
             alt="חבל הארץ אחזקות בע״מ"
             width={58}
             height={58}
@@ -46,7 +44,6 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Nav — center */}
         <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
           {navLinks.map((link) => (
             <a
@@ -60,7 +57,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Call Button — far left in RTL */}
         <a
           href="tel:0723910351"
           className="btn-pulse hidden md:flex items-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#c98a00] transition-colors whitespace-nowrap"
@@ -69,7 +65,6 @@ export default function Navbar() {
           <span>חייגו עכשיו</span>
         </a>
 
-        {/* Mobile Hamburger */}
         <button
           className="md:hidden text-[#1c1c1c] mr-auto"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -79,7 +74,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white border-t border-[#e2e2e2] overflow-hidden transition-all duration-300 ${
           menuOpen ? 'max-h-96 py-4' : 'max-h-0'
