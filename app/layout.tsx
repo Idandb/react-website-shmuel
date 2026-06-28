@@ -8,14 +8,32 @@ const assistant = Assistant({
   weight: ['400', '600', '700', '800'],
 })
 
+const SITE_URL = 'https://your-domain.com'
+const TITLE = 'חבל הארץ אחזקות בע״מ – קונים ברזל ומתכות | פינוי מקצועי עם מנוף'
+const DESCRIPTION =
+  'אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים. משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים.'
+
 export const metadata: Metadata = {
-  title: 'חבל הארץ אחזקות בע״מ – קונים ברזל ומתכות | פינוי מקצועי עם מנוף',
-  description:
-    'אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים. משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים.',
+  title: TITLE,
+  description: DESCRIPTION,
   icons: {
     icon: '/logo.jpg',
     shortcut: '/logo.jpg',
     apple: '/logo.jpg',
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    type: 'website',
+    locale: 'he_IL',
+    url: SITE_URL,
+    images: [{ url: `${SITE_URL}/hero-bg.png`, width: 1200, height: 630, alt: TITLE }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/hero-bg.png`],
   },
 }
 
