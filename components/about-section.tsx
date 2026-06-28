@@ -71,7 +71,12 @@ const features = [
   },
 ]
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  areaTitle?: string
+  areaText?: React.ReactNode
+}
+
+export default function AboutSection({ areaTitle, areaText }: AboutSectionProps) {
   const aboutRef = useReveal() as React.RefObject<HTMLElement>
   const statsRef = useReveal() as React.RefObject<HTMLElement>
   const featRef  = useReveal() as React.RefObject<HTMLElement>
@@ -89,14 +94,16 @@ export default function AboutSection() {
             מי אנחנו
           </p>
           <h2 className="reveal delay-100 text-[2.4rem] md:text-5xl font-extrabold text-[#1c1c1c] mb-4 leading-tight text-balance">
-            קצת עלינו
+            {areaTitle ?? 'קצת עלינו'}
           </h2>
           <div className="reveal delay-200 gold-divider mb-8" />
-          <p className="reveal delay-300 text-[#555] text-lg leading-[1.85] max-w-2xl mx-auto text-balance">
-            אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים.
-            משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים ושירות מהיר
-            באזור המרכז, השפלה, הדרום והשרון.
-          </p>
+          {areaText ?? (
+            <p className="reveal delay-300 text-[#555] text-lg leading-[1.85] max-w-2xl mx-auto text-balance">
+              אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים.
+              משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים ושירות מהיר
+              באזור המרכז, השפלה, הדרום והשרון.
+            </p>
+          )}
         </div>
       </section>
 
