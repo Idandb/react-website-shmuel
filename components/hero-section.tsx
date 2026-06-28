@@ -34,7 +34,11 @@ const particles = [
   { left: '5%',  bottom: '50%', size: 3, duration: '5s',   delay: '3s' },
 ]
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  pageTitle?: string
+}
+
+export default function HeroSection({ pageTitle }: HeroSectionProps) {
   return (
     <section
       className="relative min-h-screen flex items-center justify-end overflow-hidden"
@@ -69,10 +73,16 @@ export default function HeroSection() {
           פעילים 6 ימים בשבוע
         </div>
 
-        <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 leading-tight text-balance tracking-tight">
-          קונים ברזל<br />
-          <span className="text-[#f0a500]">ומתכות</span> מכל הסוגים
-        </h1>
+        {pageTitle ? (
+          <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 leading-tight tracking-tight">
+            <span className="text-[#f0a500]">{pageTitle}</span>
+          </h1>
+        ) : (
+          <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 leading-tight text-balance tracking-tight">
+            קונים ברזל<br />
+            <span className="text-[#f0a500]">ומתכות</span> מכל הסוגים
+          </h1>
+        )}
 
         <p className="hero-sub text-white/70 text-lg mb-8 leading-relaxed max-w-md text-balance">
           פינוי מקצועי לעסקים וללקוחות פרטיים — מהיר, משתלם ומקצועי
