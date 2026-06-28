@@ -9,9 +9,14 @@ const assistant = Assistant({
 })
 
 export const metadata: Metadata = {
-  title: 'חבל הארץ אחזקות בע״מ – קונים ברזל ומתכות | פינוי מקצועי עם מנוף',
+  title: 'חבל הארץ אחזקות בע׳מ – קונים ברזל ומתכות | פינוי מקצועי עם מנוף',
   description:
     'אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים. משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים.',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export const viewport: Viewport = {
