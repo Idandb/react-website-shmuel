@@ -2,20 +2,23 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Clock } from 'lucide-react'
 
 const navLinks = [
-  { label: 'קצת עלינו', href: '#about' },
-  { label: 'המרכז',    href: '#merkaz' },
-  { label: 'השפלה',    href: '#shfela' },
-  { label: 'הדרום',    href: '#darom' },
-  { label: 'השרון',    href: '#sharon' },
-  { label: 'גלריה',    href: '#gallery' },
+  { label: 'קצת עלינו', href: '/about' },
+  { label: 'המרכז',    href: '/merkaz' },
+  { label: 'השפלה',    href: '/shfela' },
+  { label: 'הדרום',    href: '/darom' },
+  { label: 'השרון',    href: '/sharon' },
+  { label: 'גלריה',    href: '/gallery' },
 ]
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -43,7 +46,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <a href="#" className="shrink-0">
+        <Link href="/" className="shrink-0">
           <Image
             src="/logo.jpg"
             alt="חבל הארץ אחזקות בע״מ"
@@ -52,20 +55,25 @@ export default function Navbar() {
             className="object-contain h-14 md:h-16 w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[#2a2a2a] font-semibold text-[14px] hover:text-[#f0a500] transition-colors relative group pb-0.5"
-            >
-              {link.label}
-              <span className="nav-link-line" />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-semibold text-[14px] transition-colors relative group pb-0.5 ${
+                  isActive ? 'text-[#f0a500]' : 'text-[#2a2a2a] hover:text-[#f0a500]'
+                }`}
+              >
+                {link.label}
+                <span className={`nav-link-line ${isActive ? '!w-full' : ''}`} />
+              </Link>
+            )
+          })}
         </nav>
 
         {/* CTA button */}
@@ -94,19 +102,22 @@ export default function Navbar() {
         }`}
       >
         <nav className="flex flex-col gap-0.5 px-4">
-          {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              style={{ transitionDelay: menuOpen ? `${i * 40}ms` : '0ms' }}
-              className={`text-[#1c1c1c] font-semibold text-base py-3 border-b border-[#f3f3f3] hover:text-[#f0a500] hover:pr-2 transition-all duration-200 ${
-                menuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-              }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link, i) => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ transitionDelay: menuOpen ? `${i * 40}ms` : '0ms' }}
+                className={`font-semibold text-base py-3 border-b border-[#f3f3f3] hover:text-[#f0a500] hover:pr-2 transition-all duration-200 ${
+                  menuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+                } ${isActive ? 'text-[#f0a500]' : 'text-[#1c1c1c]'}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
           <a
             href="tel:0723910351"
             className="mt-4 flex items-center justify-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-base px-5 py-3.5 rounded-full shadow-md"
