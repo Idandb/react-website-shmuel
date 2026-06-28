@@ -29,19 +29,16 @@ export default function Navbar() {
         scrolled ? 'navbar-scrolled' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        <a href="#" className="flex items-center gap-2 shrink-0 order-first">
+      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
+        <a href="#" className="shrink-0 order-first">
           <Image
             src="/logo.jpg"
             alt="חבל הארץ אחזקות בע״מ"
-            width={58}
-            height={58}
-            className="object-contain"
+            width={200}
+            height={80}
+            className="object-contain h-16 md:h-20 w-auto"
+            priority
           />
-          <div className="text-right hidden sm:block">
-            <div className="text-[#1c1c1c] font-extrabold text-lg leading-tight">חבל הארץ</div>
-            <div className="text-[#888] font-medium text-xs tracking-wide">אחזקות בע״מ</div>
-          </div>
         </a>
 
         <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
