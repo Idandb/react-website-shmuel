@@ -29,11 +29,11 @@ export default function ContactFooter() {
             <div>
               <p className="text-[#aaa] text-sm mb-2">התקשרו אלינו</p>
               <a
-                href="tel:0723910351"
+                href="tel:0537380382"
                 className="text-white font-extrabold text-4xl md:text-5xl tracking-wide hover:text-[#f0a500] transition-colors"
                 dir="ltr"
               >
-                072-3910351
+                053-7380382
               </a>
             </div>
             <p className="text-[#666] text-sm">ראשון–שישי | 07:00–18:00</p>

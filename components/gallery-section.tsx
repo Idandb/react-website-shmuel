@@ -11,7 +11,6 @@ const galleryImages = [
   { src: '/gallery-3.png', alt: 'ערמות גרוטאות מתכת' },
   { src: '/gallery-4.png', alt: 'עגורן הרמה לאיסוף ברזל' },
   { src: '/hero-bg.png',   alt: 'פינוי גרוטאות ברזל' },
-  { src: '/gallery-2.png', alt: 'שירות פינוי מקצועי' },
 ]
 
 export default function GallerySection() {

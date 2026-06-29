@@ -36,8 +36,8 @@ export default function Navbar() {
             <Clock size={12} className="icon-pulse" />
             <span>פעילים ראשון–שישי | 07:00–18:00</span>
           </div>
-          <a href="tel:0723910351" className="hover:text-white transition-colors">
-            072-3910351
+          <a href="tel:0537380382" className="hover:text-white transition-colors">
+            053-7380382
           </a>
         </div>
       </div>
@@ -78,7 +78,7 @@ export default function Navbar() {
 
         {/* CTA button */}
         <a
-          href="tel:0723910351"
+          href="tel:0537380382"
           className="btn-pulse hidden md:flex items-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#c98a00] transition-colors whitespace-nowrap shadow-md"
         >
           <Phone size={14} className="icon-shake" />
@@ -119,11 +119,11 @@ export default function Navbar() {
             )
           })}
           <a
-            href="tel:0723910351"
+            href="tel:0537380382"
             className="mt-4 flex items-center justify-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-base px-5 py-3.5 rounded-full shadow-md"
           >
             <Phone size={16} />
-            <span>072-3910351</span>
+            <span>053-7380382</span>
           </a>
         </nav>
       </div>

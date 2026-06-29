@@ -109,11 +109,11 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         </div>
 
         <a
-          href="tel:0723910351"
+          href="tel:0537380382"
           className="hero-cta btn-pulse inline-flex items-center justify-center gap-3 w-full bg-[#f0a500] hover:bg-[#c98a00] active:scale-95 text-[#1c1c1c] font-extrabold text-xl py-4 px-8 rounded-2xl transition-all duration-200"
         >
           <Phone size={22} />
-          <span>חייגו 072-3910351</span>
+          <span>חייגו 053-7380382</span>
         </a>
       </div>
     </section>
