@@ -29,11 +29,7 @@
 }
 
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html {
     direction: rtl;
     scroll-behavior: smooth;
@@ -50,86 +46,196 @@
 /* ─── Scroll Reveal ─────────────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(45px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
 .reveal-left {
   opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateX(60px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
 .reveal-right {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateX(-60px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
 
 /* stagger delays */
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
-.delay-400 { transition-delay: 0.4s; }
-.delay-500 { transition-delay: 0.5s; }
+.delay-100 { transition-delay: 0.10s; }
+.delay-150 { transition-delay: 0.15s; }
+.delay-200 { transition-delay: 0.20s; }
+.delay-250 { transition-delay: 0.25s; }
+.delay-300 { transition-delay: 0.30s; }
+.delay-350 { transition-delay: 0.35s; }
+.delay-400 { transition-delay: 0.40s; }
+.delay-450 { transition-delay: 0.45s; }
+.delay-500 { transition-delay: 0.50s; }
+.delay-600 { transition-delay: 0.60s; }
 
-/* ─── Gold pulse on CTA ──────────────────────────────────────── */
-@keyframes goldPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 165, 0, 0.55); }
-  50%       { box-shadow: 0 0 0 12px rgba(240, 165, 0, 0); }
-}
-.btn-pulse {
-  animation: goldPulse 2s ease-in-out infinite;
-}
-
-/* ─── Parallax hero text float ───────────────────────────────── */
+/* ─── Hero entrance ──────────────────────────────────────────── */
 @keyframes floatUp {
-  0%   { opacity: 0; transform: translateY(30px); }
+  0%   { opacity: 0; transform: translateY(36px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.hero-title   { animation: floatUp 0.9s ease forwards; }
-.hero-cards   { animation: floatUp 0.9s ease 0.3s forwards; opacity: 0; }
-.hero-cta     { animation: floatUp 0.9s ease 0.6s forwards; opacity: 0; }
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+.hero-title  { animation: floatUp 1s cubic-bezier(0.16,1,0.3,1) forwards; }
+.hero-sub    { animation: floatUp 1s cubic-bezier(0.16,1,0.3,1) 0.2s forwards; opacity: 0; }
+.hero-cards  { animation: floatUp 1s cubic-bezier(0.16,1,0.3,1) 0.4s forwards; opacity: 0; }
+.hero-cta    { animation: floatUp 1s cubic-bezier(0.16,1,0.3,1) 0.65s forwards; opacity: 0; }
 
-/* ─── Feature card hover ─────────────────────────────────────── */
+/* ─── Gold pulse CTA ─────────────────────────────────────────── */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240,165,0,0.6); }
+  50%       { box-shadow: 0 0 0 14px rgba(240,165,0,0); }
+}
+.btn-pulse { animation: goldPulse 2.2s ease-in-out infinite; }
+
+/* ─── Floating particles in hero ────────────────────────────── */
+@keyframes particle {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0.7; }
+  100% { transform: translateY(-120px) rotate(180deg); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #f0a500;
+  border-radius: 50%;
+  animation: particle linear infinite;
+}
+
+/* ─── Icon animations ────────────────────────────────────────── */
+@keyframes iconSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  40%       { transform: translateY(-10px); }
+  60%       { transform: translateY(-5px); }
+}
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(1.18); opacity: 0.85; }
+}
+@keyframes iconShake {
+  0%, 100%  { transform: rotate(0deg); }
+  20%        { transform: rotate(-12deg); }
+  40%        { transform: rotate(12deg); }
+  60%        { transform: rotate(-8deg); }
+  80%        { transform: rotate(8deg); }
+}
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-8px) scale(1.05); }
+}
+
+.icon-spin   { animation: iconSpin   2.5s linear infinite; }
+.icon-bounce { animation: iconBounce 2s ease-in-out infinite; }
+.icon-pulse  { animation: iconPulse  2s ease-in-out infinite; }
+.icon-shake  { animation: iconShake  1.8s ease-in-out infinite; }
+.icon-float  { animation: iconFloat  2.5s ease-in-out infinite; }
+
+.icon-spin:hover,
+.icon-bounce:hover,
+.icon-pulse:hover,
+.icon-shake:hover,
+.icon-float:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Feature card ───────────────────────────────────────────── */
 .feature-card {
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(240,165,0,0.12) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 .feature-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px);
   border-color: #f0a500;
-  background: rgba(240, 165, 0, 0.07);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(240,165,0,0.3);
+}
+.feature-card:hover::before { opacity: 1; }
+
+/* ─── Stat counter card ──────────────────────────────────────── */
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(240,165,0,0.2);
 }
 
-/* ─── Gallery image zoom ─────────────────────────────────────── */
+/* ─── Gallery hover ──────────────────────────────────────────── */
+.gallery-item {
+  transition: transform 0.3s ease;
+}
 .gallery-item img {
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
 }
-.gallery-item:hover img {
-  transform: scale(1.08);
-}
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item:hover { transform: scale(1.02); }
 .gallery-item::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(240, 165, 0, 0.0);
+  background: rgba(240,165,0,0.0);
   transition: background 0.3s ease;
+  pointer-events: none;
 }
-.gallery-item:hover::after {
-  background: rgba(240, 165, 0, 0.15);
+.gallery-item:hover::after { background: rgba(240,165,0,0.12); }
+
+/* ─── Gold underline nav link ────────────────────────────────── */
+.nav-link-line {
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to left, #f0a500, #c98a00);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
 }
+.group:hover .nav-link-line { width: 100%; }
 
 /* ─── Navbar scroll shadow ───────────────────────────────────── */
-.navbar-scrolled {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+.navbar-scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.14); }
+
+/* ─── Section divider glow ───────────────────────────────────── */
+.gold-divider {
+  width: 64px;
+  height: 4px;
+  background: linear-gradient(to left, #f0a500, #ffe082);
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(240,165,0,0.5);
+  margin: 0 auto;
 }

@@ -1,8 +1,6 @@
-import Navbar from '@/components/navbar'
 import HeroSection from '@/components/hero-section'
 import AboutSection from '@/components/about-section'
 import GallerySection from '@/components/gallery-section'
-import ContactFooter from '@/components/contact-footer'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -22,13 +20,9 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
-        <Navbar />
-        <HeroSection />
-        <AboutSection />
-        <GallerySection />
-        <ContactFooter />
-      </main>
+      <HeroSection />
+      <AboutSection />
+      <GallerySection />
     </>
   )
 }
