@@ -3,6 +3,7 @@ import { Assistant } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar'
 import ContactFooter from '@/components/contact-footer'
+import A11yWidget from '@/components/a11y-widget'
 
 const assistant = Assistant({
   variable: '--font-assistant',
@@ -52,9 +53,16 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" className={`bg-background ${assistant.variable}`}>
       <body className="font-sans antialiased">
+        {/* FOUC bootstrap — reads localStorage before first paint and applies a11y classes */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=JSON.parse(localStorage.getItem('a11y-prefs')||'{}'),m={contrast:'a11y-contrast',textSize:'a11y-text-size',lineSpacing:'a11y-line-spacing',largeCursor:'a11y-large-cursor',reduceMotion:'a11y-reduce-motion'},e=document.documentElement;Object.keys(m).forEach(function(k){if(p[k]===true)e.classList.add(m[k])});}catch(e){}})();`,
+          }}
+        />
         <Navbar />
         {children}
         <ContactFooter />
+        <A11yWidget />
       </body>
     </html>
   )
