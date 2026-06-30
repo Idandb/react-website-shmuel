@@ -68,27 +68,28 @@ export default function FaqSection() {
           {faqs.map((f, i) => {
             const isOpen = open === i
             return (
-              <li
-                key={i}
-                className={`reveal delay-${Math.min((i + 1) * 100, 500)} border rounded-2xl overflow-hidden transition-colors ${
-                  isOpen ? 'border-[#f0a500] bg-[#fffbf2]' : 'border-[#e2e2e2] bg-white'
-                }`}
-              >
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  className="w-full flex items-center justify-between gap-3 text-right px-5 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0a500] rounded-2xl"
+              <li key={i} className={`reveal delay-${Math.min((i + 1) * 100, 500)}`}>
+                <div
+                  className={`border rounded-2xl overflow-hidden transition-colors ${
+                    isOpen ? 'border-[#f0a500] bg-[#fffbf2]' : 'border-[#e2e2e2] bg-white'
+                  }`}
                 >
-                  <span className="font-bold text-[#1c1c1c] text-base md:text-lg">{f.q}</span>
-                  <ChevronDown
-                    size={20}
-                    className={`shrink-0 text-[#f0a500] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                    aria-hidden="true"
-                  />
-                </button>
-                {isOpen && (
-                  <p className="px-5 pb-5 text-[#555] leading-[1.85] text-right">{f.a}</p>
-                )}
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between gap-3 text-right px-5 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0a500] rounded-2xl"
+                  >
+                    <span className="font-bold text-[#1c1c1c] text-base md:text-lg">{f.q}</span>
+                    <ChevronDown
+                      size={20}
+                      className={`shrink-0 text-[#f0a500] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  {isOpen && (
+                    <p className="px-5 pb-5 text-[#555] leading-[1.85] text-right">{f.a}</p>
+                  )}
+                </div>
               </li>
             )
           })}

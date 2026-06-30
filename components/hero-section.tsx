@@ -70,7 +70,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
 
         <div className="hero-sub inline-flex items-center gap-2 bg-[#f0a500]/15 border border-[#f0a500]/40 text-[#f0a500] text-sm font-bold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-[#f0a500] animate-ping inline-block" />
-          פעילים 6 ימים בשבוע
+          זמינים כעת
         </div>
 
         {pageTitle ? (
