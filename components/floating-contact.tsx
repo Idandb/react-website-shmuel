@@ -5,7 +5,7 @@ import { Phone } from 'lucide-react'
 const PHONE = '0537380382'           // tel: — ללא 972 וללא מקפים
 const WHATSAPP = '972537380382'      // wa.me — דורש קידומת בינ״ל כדי לפתוח צ׳אט
 
-function WhatsappIcon({ size = 28 }: { size?: number }) {
+export function WhatsappIcon({ size = 28 }: { size?: number }) {
   return (
     <svg
       width={size}
