@@ -95,7 +95,7 @@ export default function A11yWidget() {
         aria-haspopup="dialog"
         className={cn(
           'fixed bottom-6 right-6 z-[100]',
-          'w-11 h-11 rounded-full',
+          'w-[30px] h-[30px] rounded-full',
           'bg-[#f0a500] text-[#1c1c1c]',
           'shadow-lg hover:bg-[#c98a00]',
           'flex items-center justify-center',
@@ -104,7 +104,7 @@ export default function A11yWidget() {
           open && 'scale-90',
         )}
       >
-        <Accessibility size={22} strokeWidth={1.8} aria-hidden="true" />
+        <Accessibility size={16} strokeWidth={1.8} aria-hidden="true" />
         {activeCount > 0 && (
           <span
             aria-hidden="true"
