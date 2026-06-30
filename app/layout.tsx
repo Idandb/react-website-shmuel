@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/navbar'
 import ContactFooter from '@/components/contact-footer'
 import A11yWidget from '@/components/a11y-widget'
+import FloatingContact from '@/components/floating-contact'
 
 const assistant = Assistant({
   variable: '--font-assistant',
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <ContactFooter />
+        <FloatingContact />
         <A11yWidget />
       </body>
     </html>
