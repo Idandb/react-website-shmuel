@@ -1,7 +1,7 @@
 'use client'
 
 import { useReveal } from '@/hooks/use-reveal'
-import { Phone, Lock, Accessibility } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 export default function ContactFooter() {
   const ref = useReveal()
@@ -57,23 +57,8 @@ export default function ContactFooter() {
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-[#2e2e2e] py-5 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-5 text-[#666] text-sm">
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#f0a500] transition-colors">
-            <Lock size={13} />
-            <span>מדיניות פרטיות</span>
-          </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#f0a500] transition-colors">
-            <Accessibility size={13} />
-            <span>הצהרת נגישות</span>
-          </a>
-        </div>
-        <p className="text-center text-[#444] text-xs mt-3">
-          Made with{' '}
-          <span className="text-red-500">♥</span>
-          {' '}by{' '}
-          <a href="#" className="text-[#f0a500] hover:underline">
-            Astrateg
-          </a>
+        <p className="text-center text-[#666] text-xs">
+          © {new Date().getFullYear()} חבל הארץ אחזקות בע״מ — כל הזכויות שמורות
         </p>
       </div>
     </footer>

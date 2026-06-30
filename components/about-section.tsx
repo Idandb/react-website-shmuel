@@ -35,8 +35,8 @@ function Counter({ to, suffix = '', duration = 1800 }: { to: number; suffix?: st
 
 const stats = [
   { icon: Clock,  iconClass: 'icon-spin',   value: 12,   suffix: '+', label: 'שנות ניסיון' },
-  { icon: Users,  iconClass: 'icon-bounce',  value: 5000, suffix: '+', label: 'לקוחות מרוצים' },
-  { icon: Truck,  iconClass: 'icon-float',   value: 20,   suffix: '+', label: 'משאיות פעילות' },
+  { icon: Users,  iconClass: 'icon-bounce',  value: 1000, suffix: '+', label: 'לקוחות מרוצים' },
+  { icon: Truck,  iconClass: 'icon-float',   value: 3,    suffix: '+', label: 'משאיות פעילות' },
   { icon: MapPin, iconClass: 'icon-pulse',   value: 4,    suffix: '',  label: 'אזורי שירות' },
 ]
 
@@ -94,15 +94,23 @@ export default function AboutSection({ areaTitle, areaText }: AboutSectionProps)
             מי אנחנו
           </p>
           <h2 className="reveal delay-100 text-[2.4rem] md:text-5xl font-extrabold text-[#1c1c1c] mb-4 leading-tight text-balance">
-            {areaTitle ?? 'קצת עלינו'}
+            {areaTitle ?? 'קונים ברזל ומתכות — קצת עלינו'}
           </h2>
           <div className="reveal delay-200 gold-divider mb-8" />
           {areaText ?? (
-            <p className="reveal delay-300 text-[#555] text-lg leading-[1.85] max-w-2xl mx-auto text-balance">
-              אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים.
-              משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים ושירות מהיר
-              באזור המרכז, השפלה, הדרום והשרון.
-            </p>
+            <div className="reveal delay-300 text-[#555] text-lg leading-[1.85] max-w-2xl mx-auto space-y-5 text-right">
+              <p>
+                <span className="text-[#1c1c1c] font-semibold">חבל הארץ אחזקות בע״מ</span> קונים ברזל
+                ומתכות מכל הסוגים — ברזל, נחושת, אלומיניום, נירוסטה ופליז — ומעניקים שירותי
+                פינוי גרוטאות ופינוי מתכות מקצועי לעסקים, מפעלים, אתרי בנייה וללקוחות פרטיים.
+                אנו משלמים מחיר הוגן ותחרותי ונותנים הצעת מחיר משתלמת באחריות.
+              </p>
+              <p>
+                עם צי משאיות מצויד במנוף הידראולי אנו מבצעים פינוי ציוד כבד ופינוי פסולת מתכת
+                במשקל גדול, במהירות וביעילות. ותק של 12 שנים בתחום מחזור המתכות ושירות מהיר
+                באזור המרכז, השפלה, הדרום והשרון — חייגו וקבלו הצעת מחיר עוד היום.
+              </p>
+            </div>
           )}
         </div>
       </section>
