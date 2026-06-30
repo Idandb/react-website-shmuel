@@ -11,7 +11,6 @@ const galleryImages = [
   { src: '/gallery-3.png', alt: 'ערמות גרוטאות מתכת' },
   { src: '/gallery-4.png', alt: 'עגורן הרמה לאיסוף ברזל' },
   { src: '/hero-bg.png',   alt: 'פינוי גרוטאות ברזל' },
-  { src: '/gallery-2.png', alt: 'שירות פינוי מקצועי' },
 ]
 
 export default function GallerySection() {
@@ -48,13 +47,11 @@ export default function GallerySection() {
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover"
                 />
-                {/* hover overlay with zoom icon */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#f0a500] rounded-full p-3 shadow-xl">
                     <ZoomIn size={22} className="text-[#1c1c1c]" />
                   </div>
                 </div>
-                {/* bottom label */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent py-3 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-white text-xs font-semibold">{img.alt}</p>
                 </div>
@@ -64,7 +61,6 @@ export default function GallerySection() {
         </div>
       </section>
 
-      {/* Lightbox */}
       {lightbox !== null && (
         <div
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 import { useReveal } from '@/hooks/use-reveal'
 import { Truck, Medal, Recycle, BadgeDollarSign, Leaf, Users, Clock, MapPin } from 'lucide-react'
 
-/* ─── Animated counter ──────────────────────────────────────── */
 function Counter({ to, suffix = '', duration = 1800 }: { to: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
@@ -34,12 +33,11 @@ function Counter({ to, suffix = '', duration = 1800 }: { to: number; suffix?: st
   return <span ref={ref}>{count}{suffix}</span>
 }
 
-/* ─── Data ──────────────────────────────────────────────────── */
 const stats = [
-  { icon: Clock,  iconClass: 'icon-spin',   value: 12, suffix: '+', label: 'שנות ניסיון' },
-  { icon: Users,  iconClass: 'icon-bounce',  value: 5000, suffix: '+', label: 'לקוחות מרוצים' },
-  { icon: Truck,  iconClass: 'icon-float',   value: 20, suffix: '+', label: 'משאיות פעילות' },
-  { icon: MapPin, iconClass: 'icon-pulse',   value: 4,  suffix: '',  label: 'אזורי שירות' },
+  { icon: Clock,  iconClass: 'icon-spin',   value: 12,   suffix: '+', label: 'שנות ניסיון' },
+  { icon: Users,  iconClass: 'icon-bounce',  value: 1000, suffix: '+', label: 'לקוחות מרוצים' },
+  { icon: Truck,  iconClass: 'icon-float',   value: 3,    suffix: '+', label: 'משאיות פעילות' },
+  { icon: MapPin, iconClass: 'icon-pulse',   value: 4,    suffix: '',  label: 'אזורי שירות' },
 ]
 
 const features = [
@@ -73,15 +71,19 @@ const features = [
   },
 ]
 
-export default function AboutSection() {
-  const aboutRef  = useReveal() as React.RefObject<HTMLElement>
-  const statsRef  = useReveal() as React.RefObject<HTMLElement>
-  const featRef   = useReveal() as React.RefObject<HTMLElement>
-  const envRef    = useReveal() as React.RefObject<HTMLElement>
+interface AboutSectionProps {
+  areaTitle?: string
+  areaText?: React.ReactNode
+}
+
+export default function AboutSection({ areaTitle, areaText }: AboutSectionProps) {
+  const aboutRef = useReveal() as React.RefObject<HTMLElement>
+  const statsRef = useReveal() as React.RefObject<HTMLElement>
+  const featRef  = useReveal() as React.RefObject<HTMLElement>
+  const envRef   = useReveal() as React.RefObject<HTMLElement>
 
   return (
     <>
-      {/* ── About ── */}
       <section
         id="about"
         ref={aboutRef as React.RefObject<HTMLDivElement>}
@@ -92,18 +94,27 @@ export default function AboutSection() {
             מי אנחנו
           </p>
           <h2 className="reveal delay-100 text-[2.4rem] md:text-5xl font-extrabold text-[#1c1c1c] mb-4 leading-tight text-balance">
-            קצת עלינו
+            {areaTitle ?? 'קונים ברזל ומתכות — קצת עלינו'}
           </h2>
           <div className="reveal delay-200 gold-divider mb-8" />
-          <p className="reveal delay-300 text-[#555] text-lg leading-[1.85] max-w-2xl mx-auto text-balance">
-            אנו קונים ברזל ומתכות מכל הסוגים ומעניקים שירות פינוי מקצועי לעסקים וללקוחות פרטיים.
-            משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים ושירות מהיר
-            באזור המרכז, השפלה, הדרום והשרון.
-          </p>
+          {areaText ?? (
+            <div className="reveal delay-300 text-[#555] text-lg leading-[1.85] max-w-2xl mx-auto space-y-5 text-right">
+              <p>
+                <span className="text-[#1c1c1c] font-semibold">חבל הארץ אחזקות בע״מ</span> קונים ברזל
+                ומתכות מכל הסוגים — ברזל, נחושת, אלומיניום, נירוסטה ופליז — ומעניקים שירותי
+                פינוי גרוטאות ופינוי מתכות מקצועי לעסקים, מפעלים, אתרי בנייה וללקוחות פרטיים.
+                אנו משלמים מחיר הוגן ותחרותי ונותנים הצעת מחיר משתלמת באחריות.
+              </p>
+              <p>
+                עם צי משאיות מצויד במנוף הידראולי אנו מבצעים פינוי ציוד כבד ופינוי פסולת מתכת
+                במשקל גדול, במהירות וביעילות. ותק של 12 שנים בתחום מחזור המתכות ושירות מהיר
+                באזור המרכז, השפלה, הדרום והשרון — חייגו וקבלו הצעת מחיר עוד היום.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* ── Stats row ── */}
       <section
         ref={statsRef as React.RefObject<HTMLDivElement>}
         className="bg-[#f0a500] py-12 px-4"
@@ -112,10 +123,7 @@ export default function AboutSection() {
           {stats.map((s, i) => {
             const Icon = s.icon
             return (
-              <div
-                key={i}
-                className={`reveal delay-${(i + 1) * 100} stat-card flex flex-col items-center gap-2 text-center`}
-              >
+              <div key={i} className={`reveal delay-${(i + 1) * 100} stat-card flex flex-col items-center gap-2 text-center`}>
                 <div className={`${s.iconClass} text-[#1c1c1c]`}>
                   <Icon size={36} strokeWidth={1.5} />
                 </div>
@@ -129,7 +137,6 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* ── Feature Cards ── */}
       <section
         ref={featRef as React.RefObject<HTMLDivElement>}
         className="bg-[#1c1c1c] py-16 px-4"
@@ -139,15 +146,11 @@ export default function AboutSection() {
             למה לבחור בנו?
           </h3>
           <div className="reveal delay-100 gold-divider mb-12" />
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
             {features.map((f, i) => {
               const Icon = f.icon
               return (
-                <div
-                  key={i}
-                  className={`reveal delay-${(i + 1) * 100} feature-card border border-[#f0a500]/40 rounded-2xl px-5 py-8 flex flex-col items-center text-center gap-4 bg-[#242424] cursor-default`}
-                >
+                <div key={i} className={`reveal delay-${(i + 1) * 100} feature-card border border-[#f0a500]/40 rounded-2xl px-5 py-8 flex flex-col items-center text-center gap-4 bg-[#242424] cursor-default`}>
                   <div className={`${f.iconClass} text-[#f0a500] w-14 h-14 flex items-center justify-center rounded-full bg-[#f0a500]/10 shrink-0`}>
                     <Icon size={34} strokeWidth={1.4} />
                   </div>
@@ -163,7 +166,6 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* ── Environment ── */}
       <section
         ref={envRef as React.RefObject<HTMLDivElement>}
         className="bg-white py-16 px-4"

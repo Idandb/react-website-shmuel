@@ -149,13 +149,12 @@
   50%       { transform: translateY(-8px) scale(1.05); }
 }
 
-.icon-spin  { animation: iconSpin   2.5s linear infinite; }
+.icon-spin   { animation: iconSpin   2.5s linear infinite; }
 .icon-bounce { animation: iconBounce 2s ease-in-out infinite; }
 .icon-pulse  { animation: iconPulse  2s ease-in-out infinite; }
 .icon-shake  { animation: iconShake  1.8s ease-in-out infinite; }
 .icon-float  { animation: iconFloat  2.5s ease-in-out infinite; }
 
-/* pause on hover */
 .icon-spin:hover,
 .icon-bounce:hover,
 .icon-pulse:hover,
@@ -230,6 +229,115 @@
 
 /* ─── Navbar scroll shadow ───────────────────────────────────── */
 .navbar-scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.14); }
+
+/* ═══════════════════════════════════════════════════════════════
+   ACCESSIBILITY PREFERENCE OVERRIDES  (תקן נגישות SI 5568 / WCAG 2.0 AA)
+   Applied via html.a11y-* classes managed by lib/a11y-store.ts
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── 1. High Contrast ────────────────────────────────────────── */
+html.a11y-contrast body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+html.a11y-contrast *:not(img):not(video):not(iframe):not(svg):not(path):not(circle) {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+html.a11y-contrast a[href^="tel"],
+html.a11y-contrast button[type="submit"],
+html.a11y-contrast .hero-cta,
+html.a11y-contrast .btn-pulse {
+  background-color: #f0a500 !important;
+  color: #000000 !important;
+  border-color: #f0a500 !important;
+}
+html.a11y-contrast a:not([href^="tel"]) {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+html.a11y-contrast a:not([href^="tel"]):hover,
+html.a11y-contrast a:not([href^="tel"]):focus-visible {
+  color: #f0a500 !important;
+}
+html.a11y-contrast input,
+html.a11y-contrast select,
+html.a11y-contrast textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+html.a11y-contrast input::placeholder,
+html.a11y-contrast textarea::placeholder { color: #999 !important; }
+html.a11y-contrast img { filter: contrast(1.2) !important; background-color: transparent !important; }
+html.a11y-contrast svg { background-color: transparent !important; }
+html.a11y-contrast *:focus-visible {
+  outline: 3px solid #f0a500 !important;
+  outline-offset: 2px !important;
+}
+
+/* ─── 2. Text Size (+20%) ─────────────────────────────────────── */
+html.a11y-text-size { font-size: 120% !important; }
+
+/* ─── 3. Line Spacing ─────────────────────────────────────────── */
+html.a11y-line-spacing body,
+html.a11y-line-spacing p,
+html.a11y-line-spacing h1,
+html.a11y-line-spacing h2,
+html.a11y-line-spacing h3,
+html.a11y-line-spacing h4,
+html.a11y-line-spacing li,
+html.a11y-line-spacing span,
+html.a11y-line-spacing a,
+html.a11y-line-spacing label,
+html.a11y-line-spacing div {
+  line-height: 1.9 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ─── 4. Large Cursor (32×48 SVG, hotspot 5 3) ────────────────── */
+html.a11y-large-cursor,
+html.a11y-large-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='48' viewBox='0 0 32 48'%3E%3Cpath d='M5 3 L5 40 L12 33 L18 46 L22 44 L16 31 L26 31 Z' fill='%23000000' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E") 5 3, auto !important;
+}
+
+/* ─── 5. Reduce Motion ────────────────────────────────────────── */
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  transition-delay: 0ms !important;
+}
+/* Reveal elements start at opacity:0 — make them visible immediately */
+html.a11y-reduce-motion .reveal,
+html.a11y-reduce-motion .reveal-left,
+html.a11y-reduce-motion .reveal-right,
+html.a11y-reduce-motion .reveal-scale {
+  opacity: 1 !important;
+  transform: none !important;
+}
+/* Kill infinite / looping animations */
+html.a11y-reduce-motion .btn-pulse,
+html.a11y-reduce-motion .particle,
+html.a11y-reduce-motion .icon-spin,
+html.a11y-reduce-motion .icon-bounce,
+html.a11y-reduce-motion .icon-pulse,
+html.a11y-reduce-motion .icon-shake,
+html.a11y-reduce-motion .icon-float,
+html.a11y-reduce-motion .hero-title,
+html.a11y-reduce-motion .hero-sub,
+html.a11y-reduce-motion .hero-cards,
+html.a11y-reduce-motion .hero-cta {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+html.a11y-reduce-motion { scroll-behavior: auto !important; }
 
 /* ─── Section divider glow ───────────────────────────────────── */
 .gold-divider {
