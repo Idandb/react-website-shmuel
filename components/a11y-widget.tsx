@@ -96,11 +96,11 @@ export default function A11yWidget() {
         className={cn(
           'fixed bottom-6 right-6 z-[100]',
           'w-[30px] h-[30px] rounded-full',
-          'bg-[#f0a500] text-[#1c1c1c]',
-          'shadow-lg hover:bg-[#c98a00]',
+          'bg-[#1a3a6b] text-white',
+          'shadow-lg hover:bg-[#152e55]',
           'flex items-center justify-center',
           'transition-transform duration-200 active:scale-90',
-          'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#f0a500]/50',
+          'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#1a3a6b]/50',
           open && 'scale-90',
         )}
       >
