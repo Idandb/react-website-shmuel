@@ -89,7 +89,7 @@ export default function ContactFooter() {
                   className="text-white font-extrabold text-3xl md:text-4xl tracking-wide hover:text-[#f0a500] transition-colors"
                   dir="ltr"
                 >
-                  053-7380382
+                  0537380382
                 </a>
               </div>
               <p className="text-[#666] text-sm">ראשון–שישי | 07:00–18:00</p>

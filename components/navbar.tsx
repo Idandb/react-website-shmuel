@@ -37,7 +37,7 @@ export default function Navbar() {
             <span>פעילים ראשון–שישי | 07:00–18:00</span>
           </div>
           <a href="tel:0537380382" className="hover:text-white transition-colors">
-            053-7380382
+            0537380382
           </a>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
             className="mt-4 flex items-center justify-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-base px-5 py-3.5 rounded-full shadow-md"
           >
             <Phone size={16} />
-            <span>053-7380382</span>
+            <span>0537380382</span>
           </a>
         </nav>
       </div>
