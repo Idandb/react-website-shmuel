@@ -3,6 +3,7 @@
 import { useReveal } from '@/hooks/use-reveal'
 import { Phone, Cable, Layers, Wrench, CircleDot, Magnet, Cog } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
+import { trackWhatsappClick } from '@/lib/track'
 
 const WHATSAPP = '972537380382'
 const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח למחיר מעודכן להיום. אשלח תמונה של המתכות.')
@@ -102,6 +103,7 @@ export default function WhatWeBuy() {
             href={`https://wa.me/${WHATSAPP}?text=${WHATSAPP_TEXT}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsappClick('what-we-buy')}
             className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] active:scale-95 text-white font-bold text-lg py-3.5 px-6 rounded-2xl transition-all duration-200"
           >
             <WhatsappIcon size={20} />
