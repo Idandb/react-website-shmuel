@@ -113,6 +113,9 @@ export default function ContactFooter() {
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-[#2e2e2e] py-5 px-4">
+        <p className="text-center text-[#999] text-xs mb-1.5">
+          פועלים לפי חוק ומתעדים כל עסקה • שקילה שקופה ותשלום במזומן במקום • שירות במרכז, בשפלה, בדרום, בשרון ובירושלים
+        </p>
         <p className="text-center text-[#666] text-xs">
           © {new Date().getFullYear()} חבל הארץ אחזקות בע״מ — כל הזכויות שמורות
         </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/hero-section'
 import AboutSection from '@/components/about-section'
+import WhatWeBuy from '@/components/what-we-buy'
 import GallerySection from '@/components/gallery-section'
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function ShfelaPage() {
     <>
       <HeroSection pageTitle="קונים ברזל ומתכות באזור השפלה" />
       <AboutSection areaTitle="אזור השפלה" areaText={shfelaText} />
+      <WhatWeBuy />
       <GallerySection />
     </>
   )
