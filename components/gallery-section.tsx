@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useReveal } from '@/hooks/use-reveal'
 import { X, ZoomIn } from 'lucide-react'
@@ -16,6 +16,29 @@ const galleryImages = [
 export default function GallerySection() {
   const ref = useReveal()
   const [lightbox, setLightbox] = useState<number | null>(null)
+  const closeBtnRef = useRef<HTMLButtonElement>(null)
+  const triggerRef  = useRef<HTMLElement | null>(null)
+
+  // Escape לסגירה, מלכודת פוקוס על כפתור הסגירה ונעילת גלילת הרקע כשה-lightbox פתוח
+  useEffect(() => {
+    if (lightbox === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null)
+      if (e.key === 'Tab') {
+        e.preventDefault()
+        closeBtnRef.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeBtnRef.current?.focus()
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prevOverflow
+      triggerRef.current?.focus()
+    }
+  }, [lightbox])
 
   return (
     <>
@@ -35,10 +58,15 @@ export default function GallerySection() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {galleryImages.map((img, i) => (
-              <div
+              <button
                 key={i}
-                className={`reveal delay-${Math.min((i + 1) * 100, 500)} gallery-item relative overflow-hidden rounded-2xl aspect-video cursor-pointer group`}
-                onClick={() => setLightbox(i)}
+                type="button"
+                aria-label={`הצגת תמונה מוגדלת: ${img.alt}`}
+                className={`reveal delay-${Math.min((i + 1) * 100, 500)} gallery-item relative overflow-hidden rounded-2xl aspect-video cursor-pointer group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#f0a500]`}
+                onClick={(e) => {
+                  triggerRef.current = e.currentTarget
+                  setLightbox(i)
+                }}
               >
                 <Image
                   src={img.src}
@@ -53,9 +81,9 @@ export default function GallerySection() {
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent py-3 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white text-xs font-semibold">{img.alt}</p>
+                  <p className="text-white text-xs font-semibold text-right">{img.alt}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -63,14 +91,18 @@ export default function GallerySection() {
 
       {lightbox !== null && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={galleryImages[lightbox].alt}
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
           style={{ animation: 'fadeIn 0.2s ease forwards' }}
         >
           <button
-            className="absolute top-5 left-5 text-white bg-[#f0a500] rounded-full p-2 hover:bg-[#c98a00] transition-colors"
+            ref={closeBtnRef}
+            className="absolute top-5 left-5 text-white bg-[#f0a500] rounded-full p-2 hover:bg-[#c98a00] transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/60"
             onClick={() => setLightbox(null)}
-            aria-label="סגור"
+            aria-label="סגור תמונה מוגדלת"
           >
             <X size={22} />
           </button>

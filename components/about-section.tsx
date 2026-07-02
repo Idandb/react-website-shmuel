@@ -12,6 +12,7 @@ function Counter({ to, suffix = '', duration = 1800 }: { to: number; suffix?: st
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    let rafId = 0
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !started.current) {
         started.current = true
@@ -20,14 +21,17 @@ function Counter({ to, suffix = '', duration = 1800 }: { to: number; suffix?: st
           const progress = Math.min((now - start) / duration, 1)
           const eased = 1 - Math.pow(1 - progress, 3)
           setCount(Math.round(eased * to))
-          if (progress < 1) requestAnimationFrame(tick)
+          if (progress < 1) rafId = requestAnimationFrame(tick)
         }
-        requestAnimationFrame(tick)
+        rafId = requestAnimationFrame(tick)
         obs.disconnect()
       }
     }, { threshold: 0.5 })
     obs.observe(el)
-    return () => obs.disconnect()
+    return () => {
+      obs.disconnect()
+      cancelAnimationFrame(rafId)
+    }
   }, [to, duration])
 
   return <span ref={ref}>{count}{suffix}</span>
