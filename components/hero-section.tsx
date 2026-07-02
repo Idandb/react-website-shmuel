@@ -1,13 +1,17 @@
 'use client'
 
-import { Phone, ShieldCheck, Truck, Award } from 'lucide-react'
+import { Phone, Banknote, Truck, Award } from 'lucide-react'
+import { WhatsappIcon } from '@/components/floating-contact'
+
+const WHATSAPP = '972537380382'
+const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח להערכת מחיר למתכות. אשלח תמונה.')
 
 const heroFeatures = [
   {
-    icon: ShieldCheck,
+    icon: Banknote,
     iconClass: 'icon-pulse',
-    title: 'הצעת מחיר הטובה ביותר',
-    subtitle: 'באחריות',
+    title: 'תשלום במזומן במקום',
+    subtitle: 'מחיר הוגן ושקוף',
   },
   {
     icon: Truck,
@@ -79,13 +83,14 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
           </h1>
         ) : (
           <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 leading-tight text-balance tracking-tight">
-            קונים ברזל<br />
+            קונים ברזל, נחושת<br />
             <span className="text-[#f0a500]">ומתכות</span> מכל הסוגים
           </h1>
         )}
 
         <p className="hero-sub text-white/70 text-lg mb-8 leading-relaxed max-w-md text-balance">
-          פינוי מקצועי לעסקים וללקוחות פרטיים — מהיר, משתלם ומקצועי
+          פינוי גרוטאות מהיר לעסקים וללקוחות פרטיים — מגיעים אליכם עם מנוף •
+          תשלום הוגן במזומן • מרכז, שפלה, דרום, שרון וירושלים
         </p>
 
         <div className="hero-cards grid grid-cols-3 gap-3 mb-7">
@@ -110,10 +115,20 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
 
         <a
           href="tel:0537380382"
-          className="hero-cta btn-pulse inline-flex items-center justify-center gap-3 w-full bg-[#f0a500] hover:bg-[#c98a00] active:scale-95 text-[#1c1c1c] font-extrabold text-xl py-4 px-8 rounded-2xl transition-all duration-200"
+          className="hero-cta btn-pulse flex items-center justify-center gap-3 w-full bg-[#f0a500] hover:bg-[#c98a00] active:scale-95 text-[#1c1c1c] font-extrabold text-xl py-4 px-8 rounded-2xl transition-all duration-200"
         >
           <Phone size={22} />
-          <span>חייגו 0537380382</span>
+          <span>חייגו עכשיו להצעת מחיר — 0537380382</span>
+        </a>
+
+        <a
+          href={`https://wa.me/${WHATSAPP}?text=${WHATSAPP_TEXT}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-cta mt-3 flex items-center justify-center gap-3 w-full bg-transparent border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 font-bold text-lg py-3.5 px-8 rounded-2xl transition-all duration-200"
+        >
+          <WhatsappIcon size={22} />
+          <span>שלחו תמונה בוואטסאפ וקבלו הערכת מחיר</span>
         </a>
       </div>
     </section>

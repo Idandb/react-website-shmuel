@@ -1,9 +1,21 @@
 import type { MetadataRoute } from 'next'
 
-const BASE = 'https://your-domain.com'
+const BASE = 'https://hevelhaaretz.co.il'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/about', '/gallery', '/merkaz', '/shfela', '/darom', '/sharon']
+  const routes = [
+    '',
+    '/about',
+    '/gallery',
+    '/pinui-grutaot',
+    '/nechoshet-aluminium',
+    '/b2b',
+    '/merkaz',
+    '/shfela',
+    '/darom',
+    '/sharon',
+    '/jerusalem',
+  ]
   return routes.map((route) => ({
     url: `${BASE}${route}`,
     lastModified: new Date(),

@@ -1,4 +1,5 @@
 import HeroSection from '@/components/hero-section'
+import WhatWeBuy from '@/components/what-we-buy'
 import AboutSection from '@/components/about-section'
 import GallerySection from '@/components/gallery-section'
 import FaqSection from '@/components/faq-section'
@@ -8,11 +9,11 @@ const jsonLd = {
   '@type': 'LocalBusiness',
   name: 'חבל הארץ אחזקות בע"מ',
   description:
-    'קונים ברזל, נחושת, אלומיניום, נירוסטה ופליז במחיר הוגן ומעניקים שירותי פינוי גרוטאות ופינוי מתכות מקצועי לעסקים וללקוחות פרטיים. משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים.',
+    'קונים ברזל, נחושת, אלומיניום, נירוסטה ופליז במחיר הוגן ובתשלום מזומן במקום, ומעניקים שירותי פינוי גרוטאות ופינוי מתכות מקצועי לעסקים וללקוחות פרטיים. משאיות עם מנוף, הצעת מחיר משתלמת באחריות, ותק של 12 שנים.',
   telephone: '+972-53-7380382',
-  url: 'https://your-domain.com',
+  url: 'https://hevelhaaretz.co.il',
   priceRange: '₪₪',
-  areaServed: ['המרכז', 'השפלה', 'הדרום', 'השרון'],
+  areaServed: ['המרכז', 'השפלה', 'הדרום', 'השרון', 'ירושלים'],
   knowsAbout: ['ברזל', 'נחושת', 'אלומיניום', 'נירוסטה', 'פליז', 'פינוי גרוטאות', 'מחזור מתכות'],
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
@@ -38,6 +39,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
+      <WhatWeBuy />
       <AboutSection />
       <GallerySection />
       <FaqSection />

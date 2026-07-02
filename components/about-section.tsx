@@ -37,7 +37,7 @@ const stats = [
   { icon: Clock,  iconClass: 'icon-spin',   value: 12,   suffix: '+', label: 'שנות ניסיון' },
   { icon: Users,  iconClass: 'icon-bounce',  value: 1000, suffix: '+', label: 'לקוחות מרוצים' },
   { icon: Truck,  iconClass: 'icon-float',   value: 3,    suffix: '+', label: 'משאיות פעילות' },
-  { icon: MapPin, iconClass: 'icon-pulse',   value: 4,    suffix: '',  label: 'אזורי שירות' },
+  { icon: MapPin, iconClass: 'icon-pulse',   value: 5,    suffix: '',  label: 'אזורי שירות' },
 ]
 
 const features = [
@@ -65,9 +65,9 @@ const features = [
   {
     icon: BadgeDollarSign,
     iconClass: 'icon-pulse',
-    title: 'הצעת מחיר הוגנת',
-    subtitle: 'תמיד משתלמת',
-    desc: 'מחירים שקופים ותחרותיים — ללא הפתעות',
+    title: 'תשלום במזומן במקום',
+    subtitle: 'מחיר הוגן ושקוף',
+    desc: 'שקילה מולכם, מחירים שקופים ותחרותיים ותשלום מיידי — ללא הפתעות',
   },
 ]
 
@@ -103,12 +103,12 @@ export default function AboutSection({ areaTitle, areaText }: AboutSectionProps)
                 <span className="text-[#1c1c1c] font-semibold">חבל הארץ אחזקות בע״מ</span> קונים ברזל
                 ומתכות מכל הסוגים — ברזל, נחושת, אלומיניום, נירוסטה ופליז — ומעניקים שירותי
                 פינוי גרוטאות ופינוי מתכות מקצועי לעסקים, מפעלים, אתרי בנייה וללקוחות פרטיים.
-                אנו משלמים מחיר הוגן ותחרותי ונותנים הצעת מחיר משתלמת באחריות.
+                אנו משלמים מחיר הוגן ותחרותי במזומן במקום, ונותנים הצעת מחיר משתלמת באחריות.
               </p>
               <p>
                 עם צי משאיות מצויד במנוף הידראולי אנו מבצעים פינוי ציוד כבד ופינוי פסולת מתכת
                 במשקל גדול, במהירות וביעילות. ותק של 12 שנים בתחום מחזור המתכות ושירות מהיר
-                באזור המרכז, השפלה, הדרום והשרון — חייגו וקבלו הצעת מחיר עוד היום.
+                באזור המרכז, השפלה, הדרום, השרון וירושלים — חייגו וקבלו הצעת מחיר עוד היום.
               </p>
             </div>
           )}
