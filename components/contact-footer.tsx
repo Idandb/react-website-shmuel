@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useReveal } from '@/hooks/use-reveal'
 import { Phone } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
+import { trackWhatsappClick } from '@/lib/track'
 
 const WHATSAPP = '972537380382' // wa.me — דורש קידומת בינ״ל
 
@@ -20,6 +21,7 @@ export default function ContactFooter() {
     if (phone.trim()) lines.push(`טלפון: ${phone.trim()}`)
     if (message.trim()) lines.push(`הודעה: ${message.trim()}`)
     const text = encodeURIComponent(lines.join('\n'))
+    trackWhatsappClick('footer-form')
     window.open(`https://wa.me/${WHATSAPP}?text=${text}`, '_blank', 'noopener,noreferrer')
   }
 

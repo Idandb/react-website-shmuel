@@ -1,6 +1,7 @@
 'use client'
 
 import { Phone } from 'lucide-react'
+import { trackWhatsappClick } from '@/lib/track'
 
 const PHONE = '0537380382'           // tel: — ללא 972 וללא מקפים
 const WHATSAPP = '972537380382'      // wa.me — דורש קידומת בינ״ל כדי לפתוח צ׳אט
@@ -27,6 +28,7 @@ export default function FloatingContact() {
         href={`https://wa.me/${WHATSAPP}`}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsappClick('floating')}
         aria-label="שלחו לנו הודעה בוואטסאפ"
         className="group relative w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40"
       >

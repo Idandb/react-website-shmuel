@@ -2,6 +2,7 @@
 
 import { Phone, Banknote, Truck, Award } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
+import { trackWhatsappClick } from '@/lib/track'
 
 const WHATSAPP = '972537380382'
 const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח להערכת מחיר למתכות. אשלח תמונה.')
@@ -125,6 +126,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
           href={`https://wa.me/${WHATSAPP}?text=${WHATSAPP_TEXT}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsappClick('hero')}
           className="hero-cta mt-3 flex items-center justify-center gap-3 w-full bg-transparent border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 font-bold text-lg py-3.5 px-8 rounded-2xl transition-all duration-200"
         >
           <WhatsappIcon size={22} />
