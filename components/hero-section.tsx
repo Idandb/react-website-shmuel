@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Phone, Banknote, Truck, Award } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
 import { trackWhatsappClick } from '@/lib/track'
@@ -45,8 +46,18 @@ interface HeroSectionProps {
 
 export default function HeroSection({ pageTitle }: HeroSectionProps) {
   return (
-    <section className="hero-bg relative min-h-screen flex items-center justify-end overflow-hidden">
-      <link rel="preload" as="image" href="/hero-bg.avif" type="image/avif" fetchPriority="high" />
+    <section className="relative min-h-screen flex items-center justify-end overflow-hidden">
+      {/* תמונת רקע כ-next/image עם priority — נטענת מוקדם ומכווצת אוטומטית */}
+      <Image
+        src="/hero-bg.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-top"
+        aria-hidden="true"
+      />
+
       <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/55 to-black/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 

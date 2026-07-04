@@ -66,18 +66,6 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" className={`bg-background ${assistant.variable}`}>
       <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P84LZ7T3');`,
-          }}
-        />
         {/* Google tag (gtag.js) — Google Ads AW-18289458338 */}
         <Script
           id="gtag-src"
@@ -112,25 +100,10 @@ elem.appendChild(script);`,
         />
       </head>
       <body className="font-sans antialiased pb-[52px] md:pb-0">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-P84LZ7T3"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
         {/* Clixtell (noscript) */}
         <noscript>
           <img src="//tracker.clixtell.com/track/t.gif" alt="" />
         </noscript>
-        {/* FOUC bootstrap — reads localStorage before first paint and applies a11y classes */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var p=JSON.parse(localStorage.getItem('a11y-prefs')||'{}'),m={contrast:'a11y-contrast',textSize:'a11y-text-size',lineSpacing:'a11y-line-spacing',largeCursor:'a11y-large-cursor',reduceMotion:'a11y-reduce-motion'},e=document.documentElement;Object.keys(m).forEach(function(k){if(p[k]===true)e.classList.add(m[k])});}catch(e){}})();`,
-          }}
-        />
         <Navbar />
         {children}
         <ContactFooter />

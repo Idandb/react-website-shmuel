@@ -348,14 +348,3 @@ html.a11y-reduce-motion { scroll-behavior: auto !important; }
   box-shadow: 0 0 12px rgba(240,165,0,0.5);
   margin: 0 auto;
 }
-
-/* ─── Hero background — AVIF with WebP fallback ─────────────── */
-.hero-bg {
-  background-image: url('/hero-bg.webp');
-  background-image: image-set(
-    url('/hero-bg.avif') type('image/avif'),
-    url('/hero-bg.webp') type('image/webp')
-  );
-  background-size: cover;
-  background-position: center top;
-}
