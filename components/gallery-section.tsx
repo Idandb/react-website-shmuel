@@ -6,11 +6,11 @@ import { useReveal } from '@/hooks/use-reveal'
 import { X, ZoomIn } from 'lucide-react'
 
 const galleryImages = [
-  { src: '/gallery-1.png', alt: 'משאית מנוף לפינוי מתכות' },
-  { src: '/gallery-2.png', alt: 'מתקן מיון מתכות' },
-  { src: '/gallery-3.png', alt: 'ערמות גרוטאות מתכת' },
-  { src: '/gallery-4.png', alt: 'עגורן הרמה לאיסוף ברזל' },
-  { src: '/hero-bg.png',   alt: 'פינוי גרוטאות ברזל' },
+  { src: '/gallery-1.avif', alt: 'משאית מנוף לפינוי מתכות' },
+  { src: '/gallery-2.avif', alt: 'מתקן מיון מתכות' },
+  { src: '/gallery-3.avif', alt: 'ערמות גרוטאות מתכת' },
+  { src: '/gallery-4.avif', alt: 'עגורן הרמה לאיסוף ברזל' },
+  { src: '/hero-bg.png',    alt: 'פינוי גרוטאות ברזל' },
 ]
 
 export default function GallerySection() {

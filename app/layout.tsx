@@ -85,8 +85,25 @@ gtag('config', 'AW-18289458338/b2uaCPX-mckcEKL5i5FE', {
 });`,
           }}
         />
+        {/* Clixtell Tracking Code — click-fraud protection */}
+        <Script
+          id="clixtell"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `var script=document.createElement('script');
+var prefix=document.location.protocol;
+script.async=true;script.type='text/javascript';
+var target=prefix + '//scripts.clixtell.com/track.js';
+script.src=target;var elem=document.head;
+elem.appendChild(script);`,
+          }}
+        />
       </head>
       <body className="font-sans antialiased pb-[52px] md:pb-0">
+        {/* Clixtell (noscript) */}
+        <noscript>
+          <img src="//tracker.clixtell.com/track/t.gif" alt="" />
+        </noscript>
         <Navbar />
         {children}
         <ContactFooter />

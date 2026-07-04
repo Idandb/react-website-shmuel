@@ -57,6 +57,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         className="object-cover object-top"
         aria-hidden="true"
       />
+
       <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/55 to-black/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
