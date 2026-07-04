@@ -45,14 +45,8 @@ interface HeroSectionProps {
 
 export default function HeroSection({ pageTitle }: HeroSectionProps) {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-end overflow-hidden"
-      style={{
-        backgroundImage: 'url(/hero-bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-      }}
-    >
+    <section className="hero-bg relative min-h-screen flex items-center justify-end overflow-hidden">
+      <link rel="preload" as="image" href="/hero-bg.avif" type="image/avif" fetchPriority="high" />
       <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/55 to-black/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
