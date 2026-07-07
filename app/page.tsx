@@ -1,8 +1,13 @@
+import type { Metadata } from 'next'
 import HeroSection from '@/components/hero-section'
 import WhatWeBuy from '@/components/what-we-buy'
 import AboutSection from '@/components/about-section'
 import GallerySection from '@/components/gallery-section'
 import FaqSection from '@/components/faq-section'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 const jsonLd = {
   '@context': 'https://schema.org',

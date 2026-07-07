@@ -6,6 +6,7 @@ import GallerySection from '@/components/gallery-section'
 export const metadata: Metadata = {
   title: 'גלריה | חבל הארץ אחזקות בע״מ',
   description: 'גלריית תמונות של עבודות פינוי ברזל ומתכות – חבל הארץ אחזקות בע״מ.',
+  alternates: { canonical: '/gallery' },
 }
 
 export default function GalleryPage() {

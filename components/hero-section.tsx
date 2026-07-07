@@ -46,7 +46,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ pageTitle }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-end overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center justify-end overflow-hidden">
       {/* תמונת רקע כ-next/image עם priority — נטענת מוקדם ומכווצת אוטומטית */}
       <Image
         src="/hero-bg.png"
@@ -76,7 +76,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         />
       ))}
 
-      <div className="relative z-10 w-full max-w-2xl mr-0 md:mr-16 px-5 pt-32 pb-20 text-right">
+      <div className="relative z-10 w-full max-w-2xl mr-0 md:mr-16 px-5 pt-32 pb-10 text-right">
 
         <div className="hero-sub inline-flex items-center gap-2 bg-[#f0a500]/15 border border-[#f0a500]/40 text-[#f0a500] text-sm font-bold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-[#f0a500] animate-ping inline-block" />
@@ -133,7 +133,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackWhatsappClick('hero')}
-          className="hero-cta mt-3 flex items-center justify-center gap-3 w-full bg-transparent border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 font-bold text-lg py-3.5 px-8 rounded-2xl transition-all duration-200"
+          className="hero-cta mt-2 flex items-center justify-center gap-3 w-full bg-transparent border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 font-bold text-lg py-3.5 px-8 rounded-2xl transition-all duration-200"
         >
           <WhatsappIcon size={22} />
           <span>שלחו תמונה בוואטסאפ וקבלו הערכת מחיר</span>

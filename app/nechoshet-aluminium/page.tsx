@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'קונה נחושת ואלומיניום — מחיר מעודכן להיום | חבל הארץ אחזקות בע״מ',
   description:
     'קניית נחושת, אלומיניום, כבלים, נירוסטה ופליז במחיר הוגן — שקילה במקום ותשלום במזומן. מחיר נחושת ואלומיניום לקילו מתעדכן יומית לפי בורסת לונדון — חייגו למחיר מעודכן להיום.',
+  alternates: { canonical: '/nechoshet-aluminium' },
 }
 
 const jsonLd = serviceJsonLd('קניית נחושת ואלומיניום', '/nechoshet-aluminium')

@@ -15,11 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/darom',
     '/sharon',
     '/jerusalem',
+    '/privacy',
   ]
   return routes.map((route) => ({
     url: `${BASE}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/privacy' ? 0.3 : 0.8,
   }))
 }

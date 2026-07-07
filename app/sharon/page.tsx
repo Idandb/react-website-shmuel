@@ -7,6 +7,7 @@ import GallerySection from '@/components/gallery-section'
 export const metadata: Metadata = {
   title: 'קונים ברזל ומתכות באזור השרון | חבל הארץ אחזקות בע״מ',
   description: 'רכישת ברזל ומתכות ופינוי מקצועי באזור השרון – נתניה, הרצליה, כפר סבא, רעננה, חדרה ועוד.',
+  alternates: { canonical: '/sharon' },
 }
 
 const sharonText = (

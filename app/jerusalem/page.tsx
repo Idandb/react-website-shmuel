@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'קונים ברזל ומתכות בירושלים | חבל הארץ אחזקות בע״מ',
   description:
     'קונה ברזל בירושלים, קניית מתכות ופינוי גרוטאות בירושלים והסביבה — מבשרת ציון, מעלה אדומים, בית שמש ועוד. משאית מנוף, שקילה במקום ותשלום במזומן.',
+  alternates: { canonical: '/jerusalem' },
 }
 
 const jerusalemText = (

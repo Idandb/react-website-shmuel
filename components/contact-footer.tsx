@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useReveal } from '@/hooks/use-reveal'
 import { Phone } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
@@ -110,6 +111,7 @@ export default function ContactFooter() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+            <p className="text-center text-[#666] text-xs">בילו סנטר</p>
           </div>
         </div>
       </div>
@@ -118,6 +120,9 @@ export default function ContactFooter() {
       <div className="border-t border-[#2e2e2e] py-5 px-4">
         <p className="text-center text-[#999] text-xs mb-1.5">
           פועלים לפי חוק ומתעדים כל עסקה • שקילה שקופה ותשלום במזומן במקום • שירות במרכז, בשפלה, בדרום, בשרון ובירושלים
+        </p>
+        <p className="text-center text-[#666] text-xs mb-1.5">
+          <Link href="/privacy" className="hover:text-[#f0a500] transition-colors">מדיניות פרטיות</Link>
         </p>
         <p className="text-center text-[#666] text-xs">
           נבנה על ידי עידן בניית אתרים 0535455667 כל הזכויות שמורות

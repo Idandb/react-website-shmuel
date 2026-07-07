@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'קצת עלינו | חבל הארץ אחזקות בע״מ',
   description:
     'חברת חבל הארץ אחזקות בע״מ – 12 שנות ניסיון ברכישת ברזל ומתכות ופינוי מקצועי עם מנוף. פועלים לפי חוק ומתעדים כל עסקה, שקילה שקופה ותשלום במזומן במקום.',
+  alternates: { canonical: '/about' },
 }
 
 export default function AboutPage() {
