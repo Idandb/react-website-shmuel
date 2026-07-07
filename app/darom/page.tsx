@@ -7,6 +7,7 @@ import GallerySection from '@/components/gallery-section'
 export const metadata: Metadata = {
   title: 'קונים ברזל ומתכות בדרום | חבל הארץ אחזקות בע״מ',
   description: 'רכישת ברזל ומתכות ופינוי מקצועי באזור הדרום – באר שבע, אשדוד, אשקלון, קריית גת, נתיבות ועוד.',
+  alternates: { canonical: '/darom' },
 }
 
 const daromText = (

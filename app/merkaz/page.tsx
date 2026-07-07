@@ -7,6 +7,7 @@ import GallerySection from '@/components/gallery-section'
 export const metadata: Metadata = {
   title: 'קונים ברזל ומתכות באזור המרכז | חבל הארץ אחזקות בע״מ',
   description: 'רכישת ברזל ומתכות ופינוי מקצועי באזור המרכז – תל אביב, פתח תקווה, ראשון לציון, חולון, רחובות, בני ברק ועוד.',
+  alternates: { canonical: '/merkaz' },
 }
 
 const merkazText = (

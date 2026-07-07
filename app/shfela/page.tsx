@@ -7,6 +7,7 @@ import GallerySection from '@/components/gallery-section'
 export const metadata: Metadata = {
   title: 'קונים ברזל ומתכות באזור השפלה | חבל הארץ אחזקות בע״מ',
   description: 'רכישת ברזל ומתכות ופינוי מקצועי באזור השפלה – לוד, רמלה, רחובות, נס ציונה, יבנה, מודיעין ועוד.',
+  alternates: { canonical: '/shfela' },
 }
 
 const shfelaText = (

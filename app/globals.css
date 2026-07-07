@@ -109,6 +109,12 @@
 }
 .btn-pulse { animation: goldPulse 2.2s ease-in-out infinite; }
 
+/* אלמנטים עם שני המחלקות יחד — צריך להריץ את שתי האנימציות במקביל,
+   אחרת ה-animation shorthand של אחת "מוחקת" את האחרת ומשאירה opacity:0 לצמיתות */
+.hero-cta.btn-pulse {
+  animation: floatUp 1s cubic-bezier(0.16,1,0.3,1) 0.65s forwards, goldPulse 2.2s ease-in-out infinite;
+}
+
 /* ─── Floating particles in hero ────────────────────────────── */
 @keyframes particle {
   0%   { transform: translateY(0) rotate(0deg);   opacity: 0.7; }
