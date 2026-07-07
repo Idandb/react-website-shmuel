@@ -12,3 +12,12 @@ export function trackWhatsappClick(source: string) {
   if (typeof window === 'undefined') return
   window.gtag?.('event', 'conversion', { send_to: WHATSAPP_CONVERSION, whatsapp_source: source })
 }
+
+/* המרת "לחיצה על התקשרות באתר" בחשבון Google Ads — נורית ישירות דרך gtag */
+const PHONE_CONVERSION = 'AW-18289458338/PA7pCPiMncwcEKL5i5FE'
+
+/* מדווח המרה ל-Google Ads על לחיצת טלפון */
+export function trackPhoneClick(source: string) {
+  if (typeof window === 'undefined') return
+  window.gtag?.('event', 'conversion', { send_to: PHONE_CONVERSION, phone_source: source })
+}

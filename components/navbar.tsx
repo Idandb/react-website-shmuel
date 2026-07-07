@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Clock, ChevronDown, MapPin } from 'lucide-react'
+import { trackPhoneClick } from '@/lib/track'
 
 const navLinks = [
   { label: 'קצת עלינו',        href: '/about' },
@@ -66,7 +67,7 @@ export default function Navbar() {
             <Clock size={12} className="icon-pulse" />
             <span>פעילים ראשון–שישי | 07:00–18:00</span>
           </div>
-          <a href="tel:0537380382" className="hover:text-white transition-colors">
+          <a href="tel:0537380382" onClick={() => trackPhoneClick('navbar-top')} className="hover:text-white transition-colors">
             0537380382
           </a>
         </div>
@@ -151,6 +152,7 @@ export default function Navbar() {
         {/* CTA button */}
         <a
           href="tel:0537380382"
+          onClick={() => trackPhoneClick('navbar-cta')}
           className="btn-pulse hidden md:flex items-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#c98a00] transition-colors whitespace-nowrap shadow-md"
         >
           <Phone size={14} className="icon-shake" />
@@ -231,6 +233,7 @@ export default function Navbar() {
 
           <a
             href="tel:0537380382"
+            onClick={() => trackPhoneClick('navbar-mobile')}
             className="mt-4 flex items-center justify-center gap-2 bg-[#f0a500] text-[#1c1c1c] font-bold text-base px-5 py-3.5 rounded-full shadow-md"
           >
             <Phone size={16} />

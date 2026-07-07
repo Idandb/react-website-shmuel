@@ -2,7 +2,7 @@
 
 import { Phone } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
-import { trackWhatsappClick } from '@/lib/track'
+import { trackWhatsappClick, trackPhoneClick } from '@/lib/track'
 
 const PHONE = '0537380382'
 const WHATSAPP = '972537380382'
@@ -17,6 +17,7 @@ export default function StickyCallBar() {
     >
       <a
         href={`tel:${PHONE}`}
+        onClick={() => trackPhoneClick('sticky-bar')}
         className="flex items-center justify-center gap-2 bg-[#f0a500] active:bg-[#c98a00] text-[#1c1c1c] font-extrabold text-base py-3.5"
       >
         <Phone size={19} strokeWidth={2.2} aria-hidden="true" />

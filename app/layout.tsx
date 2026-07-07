@@ -80,9 +80,12 @@ export default function RootLayout({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-18289458338');
-gtag('config', 'AW-18289458338/b2uaCPX-mckcEKL5i5FE', {
-  'phone_conversion_number': '0537380382'
-});`,
+// DNI (Dynamic Number Insertion) מנוטרל בכוונה — המספר המוצג באתר נשאר קבוע לכולם.
+// מעקב לחיצות טלפון מתבצע כעת ישירות דרך trackPhoneClick (lib/track.ts).
+// אפשר להחזיר את השורות הבאות אם ירצו לחזור למנגנון מדידת-משך-שיחה של גוגל:
+// gtag('config', 'AW-18289458338/b2uaCPX-mckcEKL5i5FE', {
+//   'phone_conversion_number': '0537380382'
+// });`,
           }}
         />
         {/* Clixtell Tracking Code — click-fraud protection */}
