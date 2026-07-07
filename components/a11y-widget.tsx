@@ -94,7 +94,7 @@ export default function A11yWidget() {
         aria-expanded={open}
         aria-haspopup="dialog"
         className={cn(
-          'fixed bottom-6 right-6 z-[100]',
+          'fixed bottom-[52px] right-6 md:bottom-6 md:right-6 z-[100]',
           'w-[30px] h-[30px] rounded-full',
           'bg-[#1a3a6b] text-white',
           'shadow-lg hover:bg-[#152e55]',
@@ -124,7 +124,7 @@ export default function A11yWidget() {
           aria-label="אפשרויות נגישות"
           dir="rtl"
           className={cn(
-            'fixed bottom-20 right-6 z-[100]',
+            'fixed bottom-24 right-6 md:bottom-20 md:right-6 z-[100]',
             'w-80 rounded-2xl',
             'bg-white border border-[#e2e2e2]',
             'shadow-2xl p-4',

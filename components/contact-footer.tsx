@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useReveal } from '@/hooks/use-reveal'
 import { Phone } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
-import { trackWhatsappClick } from '@/lib/track'
+import { trackWhatsappClick, trackPhoneClick } from '@/lib/track'
 
 const WHATSAPP = '972537380382' // wa.me — דורש קידומת בינ״ל
 
@@ -88,6 +88,7 @@ export default function ContactFooter() {
                 <p className="text-[#aaa] text-sm mb-2">או חייגו אלינו</p>
                 <a
                   href="tel:0537380382"
+                  onClick={() => trackPhoneClick('footer')}
                   className="text-white font-extrabold text-3xl md:text-4xl tracking-wide hover:text-[#f0a500] transition-colors"
                   dir="ltr"
                 >

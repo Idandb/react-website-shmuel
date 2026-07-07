@@ -3,7 +3,7 @@
 import { useReveal } from '@/hooks/use-reveal'
 import { Phone, Cable, Layers, Wrench, CircleDot, Magnet, Cog } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
-import { trackWhatsappClick } from '@/lib/track'
+import { trackWhatsappClick, trackPhoneClick } from '@/lib/track'
 
 const WHATSAPP = '972537380382'
 const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח למחיר מעודכן להיום. אשלח תמונה של המתכות.')
@@ -76,6 +76,7 @@ export default function WhatWeBuy() {
                 </div>
                 <a
                   href="tel:0537380382"
+                  onClick={() => trackPhoneClick('what-we-buy-card')}
                   className="text-[#f0a500] font-bold text-sm hover:text-[#c98a00] transition-colors"
                 >
                   התקשרו למחיר ←
@@ -94,6 +95,7 @@ export default function WhatWeBuy() {
         <div className="reveal delay-400 flex flex-col sm:flex-row gap-3 justify-center max-w-xl mx-auto">
           <a
             href="tel:0537380382"
+            onClick={() => trackPhoneClick('what-we-buy')}
             className="btn-pulse flex-1 flex items-center justify-center gap-2 bg-[#f0a500] hover:bg-[#c98a00] active:scale-95 text-[#1c1c1c] font-extrabold text-lg py-3.5 px-6 rounded-2xl transition-all duration-200"
           >
             <Phone size={20} />

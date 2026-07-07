@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { Phone, Banknote, Truck, Award } from 'lucide-react'
 import { WhatsappIcon } from '@/components/floating-contact'
-import { trackWhatsappClick } from '@/lib/track'
+import { trackWhatsappClick, trackPhoneClick } from '@/lib/track'
 
 const WHATSAPP = '972537380382'
 const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח להערכת מחיר למתכות. אשלח תמונה.')
@@ -121,6 +121,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
 
         <a
           href="tel:0537380382"
+          onClick={() => trackPhoneClick('hero')}
           className="hero-cta btn-pulse flex items-center justify-center gap-3 w-full bg-[#f0a500] hover:bg-[#c98a00] active:scale-95 text-[#1c1c1c] font-extrabold text-xl py-4 px-8 rounded-2xl transition-all duration-200"
         >
           <Phone size={22} />
