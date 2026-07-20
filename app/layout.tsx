@@ -80,6 +80,7 @@ export default function RootLayout({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-18289458338');
+gtag('config', 'G-0W18FBG8V7');
 // DNI (Dynamic Number Insertion) מנוטרל בכוונה — המספר המוצג באתר נשאר קבוע לכולם.
 // מעקב לחיצות טלפון מתבצע כעת ישירות דרך trackPhoneClick (lib/track.ts).
 // אפשר להחזיר את השורות הבאות אם ירצו לחזור למנגנון מדידת-משך-שיחה של גוגל:
