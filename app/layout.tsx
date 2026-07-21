@@ -80,34 +80,40 @@ export default function RootLayout({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-18289458338');
-gtag('config', 'G-0W18FBG8V7');
-// DNI (Dynamic Number Insertion) מנוטרל בכוונה — המספר המוצג באתר נשאר קבוע לכולם.
-// מעקב לחיצות טלפון מתבצע כעת ישירות דרך trackPhoneClick (lib/track.ts).
-// אפשר להחזיר את השורות הבאות אם ירצו לחזור למנגנון מדידת-משך-שיחה של גוגל:
-// gtag('config', 'AW-18289458338/b2uaCPX-mckcEKL5i5FE', {
-//   'phone_conversion_number': '0537380382'
-// });`,
+gtag('config', 'G-0W18FBG8V7');`,
           }}
         />
-        {/* Clixtell Tracking Code — click-fraud protection */}
+
+        {/* TrafficGuard Integration */}
         <Script
-          id="clixtell"
+          id="trafficguard"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `var script=document.createElement('script');
-var prefix=document.location.protocol;
-script.async=true;script.type='text/javascript';
-var target=prefix + '//scripts.clixtell.com/track.js';
-script.src=target;var elem=document.head;
-elem.appendChild(script);`,
+            __html: `
+              var dataTrafficGuard = dataTrafficGuard || [];
+              dataTrafficGuard.push(['property_group_id', 'tg-g-025691-001']);
+              dataTrafficGuard.push(['event','pageview']);
+              (function() {
+                var tg = document.createElement('script'); tg.type = 'text/javascript'; tg.async = true;
+                tg.src = '//tgtag.io/tg.js?pid=tg-g-025691-001';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tg, s);
+              })();
+            `,
           }}
         />
       </head>
       <body className="font-sans antialiased pb-[52px] md:pb-0">
-        {/* Clixtell (noscript) */}
+        {/* TrafficGuard (noscript) */}
         <noscript>
-          <img src="//tracker.clixtell.com/track/t.gif" alt="" />
+          <img
+            src="//p.tgtag.io/event?property_group_id=tg-g-025691-001&event_name=pageview&no_script=1"
+            width="1"
+            height="1"
+            style={{ display: 'none' }}
+            alt=""
+          />
         </noscript>
+
         <Navbar />
         {children}
         <ContactFooter />
