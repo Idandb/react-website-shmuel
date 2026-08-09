@@ -76,7 +76,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         />
       ))}
 
-      <div className="relative z-10 w-full max-w-2xl mr-0 md:mr-16 px-5 pt-32 pb-10 text-right">
+<div className="relative z-10 w-full max-w-2xl mx-auto px-5 pt-32 pb-10 text-center">
 
         <div className="hero-sub inline-flex items-center gap-2 bg-[#f0a500]/15 border border-[#f0a500]/40 text-[#f0a500] text-sm font-bold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-[#f0a500] animate-ping inline-block" />
