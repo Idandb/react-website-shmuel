@@ -94,7 +94,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
           </h1>
         )}
 
-        <p className="hero-sub text-white/70 text-lg mb-8 leading-relaxed max-w-md text-balance">
+        <p className="hero-sub text-white/85 text-lg mb-8 leading-relaxed max-w-md text-balance">
           פינוי גרוטאות מהיר לעסקים וללקוחות פרטיים — מגיעים אליכם עם מנוף •
           תשלום הוגן במזומן • מרכז, שפלה, דרום, שרון וירושלים
         </p>
