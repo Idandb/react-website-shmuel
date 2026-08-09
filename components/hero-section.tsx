@@ -58,7 +58,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         aria-hidden="true"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/55 to-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/35 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
       {particles.map((p, i) => (
