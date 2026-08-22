@@ -1,8 +1,8 @@
 'use client'
 
 import { Phone } from 'lucide-react'
-import { WhatsappIcon } from '@/components/floating-contact'
-import { trackWhatsappClick, trackPhoneClick } from '@/lib/track'
+/*import { WhatsappIcon } from '@/components/floating-contact' */
+/*import { trackWhatsappClick, trackPhoneClick } from '@/lib/track' */
 
 const PHONE = '0537380382'
 const WHATSAPP = '972537380382'
