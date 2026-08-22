@@ -5,7 +5,6 @@ import './globals.css'
 import Navbar from '@/components/navbar'
 import ContactFooter from '@/components/contact-footer'
 import A11yWidget from '@/components/a11y-widget'
-import FloatingContact from '@/components/floating-contact'
 import StickyCallBar from '@/components/sticky-call-bar'
 
 const assistant = Assistant({
@@ -117,7 +116,6 @@ gtag('config', 'G-0W18FBG8V7');`,
         <Navbar />
         {children}
         <ContactFooter />
-        <FloatingContact />
         <StickyCallBar />
         <A11yWidget />
       </body>
