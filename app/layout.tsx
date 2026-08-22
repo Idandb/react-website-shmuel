@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar'
 import ContactFooter from '@/components/contact-footer'
 import A11yWidget from '@/components/a11y-widget'
 import StickyCallBar from '@/components/sticky-call-bar'
+import FloatingContact from '@/components/floating-contact'
 
 const assistant = Assistant({
   variable: '--font-assistant',
@@ -100,6 +101,21 @@ gtag('config', 'G-0W18FBG8V7');`,
             `,
           }}
         />
+        {/* Clixtell Tracking Code */}
+<Script
+  id="clixtell-tracking"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      var script=document.createElement('script');
+      var prefix=document.location.protocol;
+      script.async=true;script.type='text/javascript';
+      var target=prefix + '//scripts.clixtell.com/track.js';
+      script.src=target;var elem=document.head;
+      elem.appendChild(script);
+    `,
+  }}
+/>
       </head>
       <body className="font-sans antialiased pb-[52px] md:pb-0">
         {/* TrafficGuard (noscript) */}
@@ -116,6 +132,7 @@ gtag('config', 'G-0W18FBG8V7');`,
         <Navbar />
         {children}
         <ContactFooter />
+        <FloatingContact />
         <StickyCallBar />
         <A11yWidget />
       </body>
