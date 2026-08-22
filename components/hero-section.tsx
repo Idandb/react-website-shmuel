@@ -2,11 +2,12 @@
 
 import Image from 'next/image'
 import { Phone, Banknote, Truck, Award } from 'lucide-react'
-import { WhatsappIcon } from '@/components/floating-contact'
-import { trackWhatsappClick, trackPhoneClick } from '@/lib/track'
+/* import { WhatsappIcon } from '@/components/floating-contact' */
+/* import { trackWhatsappClick, trackPhoneClick } from '@/lib/track' */
+import { trackPhoneClick } from '@/lib/track'
 
-const WHATSAPP = '972537380382'
-const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח להערכת מחיר למתכות. אשלח תמונה.')
+/* const WHATSAPP = '972537380382'
+const WHATSAPP_TEXT = encodeURIComponent('שלום, אשמח להערכת מחיר למתכות. אשלח תמונה.') */
 
 const heroFeatures = [
   {
@@ -126,7 +127,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         >
           <Phone size={22} />
           <span>חייגו עכשיו להצעת מחיר — 0537380382</span>
-        </a>
+{/*         </a>
 
         <a
           href={`https://wa.me/${WHATSAPP}?text=${WHATSAPP_TEXT}`}
@@ -137,7 +138,7 @@ export default function HeroSection({ pageTitle }: HeroSectionProps) {
         >
           <WhatsappIcon size={22} />
           <span>שלחו תמונה בוואטסאפ וקבלו הערכת מחיר</span>
-        </a>
+        </a> */}
       </div>
     </section>
   )
