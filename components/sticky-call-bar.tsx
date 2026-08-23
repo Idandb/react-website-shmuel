@@ -50,12 +50,12 @@ const PHONE = '0537380382'
 export default function StickyCallBar() {
   return (
     <div
-      className="fixed right-0 bottom-0 left-0 z-[95] grid grid-cols-1 bg-transparent md:hidden shadow-[0_-4px_16px_rgba(0,0,0,0.15)]"
+      className="fixed right-0 bottom-0 left-0 z-[95] grid grid-cols-1 bg-transparent pointer-events-none md:hidden"
     >
       <a
         href={`tel:${PHONE}`}
         onClick={() => trackPhoneClick('sticky-bar')}
-        className="flex items-center justify-center gap-2 bg-[#f0a500] active:bg-[#c98a00] text-[#1c1c1c] font-extrabold text-base py-2"
+        className="flex items-center justify-center gap-2 bg-[#f0a500] active:bg-[#c98a00] text-[#1c1c1c] font-extrabold text-base py-2 shadow-[0_-4px_16px_rgba(0,0,0,0.15)] pointer-events-auto"
       >
         <Phone size={19} strokeWidth={2.2} aria-hidden="true" />
         <span>חייגו עכשיו</span>

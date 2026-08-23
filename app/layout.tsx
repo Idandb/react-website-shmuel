@@ -261,7 +261,7 @@ gtag('config', 'G-0W18FBG8V7');`,
   }}
 />
       </head>
-      <body className="font-sans antialiased pb-[calc(52px+var(--sticky-bar-offset,0px))] md:pb-0">
+      <body className="font-sans antialiased pb-12 md:pb-0">
         {/* TrafficGuard (noscript) */}
         <noscript>
           <img
