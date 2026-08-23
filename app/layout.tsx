@@ -55,8 +55,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#ffffff',
-  viewportFit: 'cover',
+  themeColor: '#f0a500',
 }
 
 export default function RootLayout({
@@ -261,7 +260,7 @@ gtag('config', 'G-0W18FBG8V7');`,
   }}
 />
       </head>
-      <body className="font-sans antialiased pb-12 md:pb-0">
+      <body className="font-sans antialiased pb-[52px] md:pb-0">
         {/* TrafficGuard (noscript) */}
         <noscript>
           <img
