@@ -13,7 +13,7 @@ export default function StickyCallBar() {
   return (
     <div
       className="fixed bottom-0 right-0 left-0 z-[95] grid grid-cols-1 md:hidden shadow-[0_-4px_16px_rgba(0,0,0,0.15)]"
-/*       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }} */
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }} 
     >
       <a
         href={`tel:${PHONE}`}
