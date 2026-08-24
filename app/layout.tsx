@@ -91,7 +91,7 @@ gtag('config', 'G-0W18FBG8V7');`,
           src="https://scripts.clixtell.com/track.js"
         />
       </head>
-      <body className="font-sans antialiased pb-[52px] md:pb-0">
+      <body className="font-sans antialiased pb-[25px] md:pb-0">
         {/* Clixtell (noscript) */}
         <noscript>
           <img
